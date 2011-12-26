@@ -1,16 +1,14 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.IO;
+using System.Linq;
+using System.Threading;
 using Terraria;
 using Hooks;
 using TShockAPI;
+using TShockAPI.DB;
 using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using System.Data;
-using System.Diagnostics;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace JailPrison
 {
@@ -19,7 +17,7 @@ namespace JailPrison
     {
         public static List<Player> Players = new List<Player>();
         public static JPConfigFile JPConfig { get; set; }
-        internal static string JPConfigPath { get { return Path.Combine(TShock.SavePath, "jpconfig.cfg"); } }
+        internal static string JPConfigPath { get { return Path.Combine(TShock.SavePath, "jpconfig.json"); } }
 
         public override string Name
         {
