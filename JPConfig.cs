@@ -8,6 +8,7 @@ namespace JailPrison
     {
         public bool jailmode = true;
         public bool prisonmode = true;
+        public string jailcomm = "ireadtherules";
 
         public static JPConfigFile Read(string path)
         {

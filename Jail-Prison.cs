@@ -68,13 +68,15 @@ namespace JailPrison
 
         public void OnInitialize()
         {
+            SetupConfig();
             if (JPConfig.jailmode)
-                Commands.ChatCommands.Add(new Command("jailcomm", warpjail, "ireadtherules"));
+                Commands.ChatCommands.Add(new Command("jailcomm", warpjail, JPConfig.jailcomm));
             if (JPConfig.prisonmode)
             {
                 Commands.ChatCommands.Add(new Command("prison", imprison, "imprison"));
                 Commands.ChatCommands.Add(new Command("prison", setfree, "setfree"));
             }
+            Commands.ChatCommands.Add(new Command("cfg", jailreload, "jailreload"));
         }
 
         public void OnGreetPlayer(int ply, HandledEventArgs e)
@@ -422,6 +424,12 @@ namespace JailPrison
             {
                 args.Player.SendMessage("Spawn Warp Was Not Made! Make One!", Color.Red);
             }
+        }
+        private static void jailreload(CommandArgs args)
+        {
+            SetupConfig();
+            Log.Info("Jail Reload Initiated");
+            args.Player.SendMessage("Jail Reload Initiated");
         }
     }
 }
