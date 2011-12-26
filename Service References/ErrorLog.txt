@@ -1,0 +1,40 @@
+Exception while trying to load: TShockAPI.dll
+Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+Stack trace:
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Terraria.ProgramServer.Initialize(Main main)
+
+Exception while trying to load: TShockAPI.dll
+Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+Stack trace:
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Terraria.ProgramServer.Initialize(Main main)
+
+Exception while trying to load: TShockAPI.dll
+Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+Stack trace:
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Terraria.ProgramServer.Initialize(Main main)
+
+Exception while trying to load: TShockAPI.dll
+Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+Stack trace:
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Terraria.ProgramServer.Initialize(Main main)
+
+Exception while trying to load: TShockAPI.dll
+Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+Stack trace:
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Terraria.ProgramServer.Initialize(Main main)
+

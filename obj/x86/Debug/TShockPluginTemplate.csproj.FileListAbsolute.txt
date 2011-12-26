@@ -1,0 +1,11 @@
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TShockPluginTemplate.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TShockPluginTemplate.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TerrariaServer.exe
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TerrariaServerAPI.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TShockAPI.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Community.CsharpSqlite.SQLiteClient.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Community.CsharpSqlite.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\TShockPluginTemplate.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\TShockPluginTemplate.pdb

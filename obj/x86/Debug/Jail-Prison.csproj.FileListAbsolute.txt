@@ -1,0 +1,6 @@
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\Jail-Prison.dll
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\Jail-Prison.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\TerrariaServer.exe
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\obj\x86\Debug\Jail-Prison.dll
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\obj\x86\Debug\Jail-Prison.pdb

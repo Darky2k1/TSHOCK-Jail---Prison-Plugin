@@ -1,0 +1,14 @@
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\TShockPluginTemplate\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\TShockPluginTemplate\obj\x86\Debug\Jail.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\TShockPluginTemplate\obj\x86\Debug\Jail.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\Community.CsharpSqlite.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\Community.CsharpSqlite.SQLiteClient.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\MySql.Data.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\MySql.Web.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\TerrariaServer.exe
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\AdvancedWarpplate.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\bin\Debug\AdvancedWarpplate.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\obj\x86\Debug\AdvancedWarpplate.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905 - Copy\Advanced-Warpplates\obj\x86\Debug\AdvancedWarpplate.pdb

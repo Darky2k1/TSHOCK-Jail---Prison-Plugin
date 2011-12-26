@@ -1,0 +1,13 @@
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TerrariaServer.exe
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\TShockAPI.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Community.CsharpSqlite.SQLiteClient.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Community.CsharpSqlite.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Jail.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\Jail.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\Jail.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\obj\x86\Debug\Jail.pdb
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\MySql.Data.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\MySql.Web.dll
+C:\Users\DarkunderdoG\Desktop\tshock\twitchy0905\TShockPluginTemplate\bin\Debug\HttpServer.dll
