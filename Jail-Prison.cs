@@ -117,9 +117,9 @@ namespace JailPrison
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error in config file");
+                Console.WriteLine("Error in jail config file");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Log.Error("Config Exception");
+                Log.Error("Jail Config Exception");
                 Log.Error(ex.ToString());
             }
         }
