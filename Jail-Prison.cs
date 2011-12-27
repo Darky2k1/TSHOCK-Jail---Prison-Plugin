@@ -323,21 +323,32 @@ namespace JailPrison
                 args.Player.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
                 return;
             }
-            if (TShock.Regions.InAreaRegionName(args.Player.TileX, args.Player.TileY) != "jail")
-            {
-                args.Player.SendMessage("You Aren't In The Jail...");
-                return;
-            }
             if (TShock.Regions.InAreaRegionName(args.Player.TileX, args.Player.TileY) == "jail")
+                args.Player.SendMessage("You May Now Exit The Jail!", Color.Pink);
+            Players[GetPlayerIndex(args.Player.Index)].rulesMode = false;
+            args.Player.SendMessage("Thanks For Reading The Rules!", Color.Pink);
+            var foundplr = TShock.Utils.FindPlayer(args.Player.Name);
+            if (JPConfig.groupname != "" && args.Player.Group.HasPermission("rulerank") && foundplr[0].IsLoggedIn)
             {
-                var warp = TShock.Warps.FindWarp("spawn");
-                if (args.Player.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
-                    args.Player.SendMessage("Teleported out of jail.");
+                var foundgrp = FindGroup(JPConfig.groupname);
+                if (foundgrp.Count == 1)
+                {
+                    var loggeduser = TShock.Users.GetUserByName(args.Player.UserAccountName);
+                    TShock.Users.SetUserGroup(loggeduser, foundgrp[0].Name);
+                    args.Player.Group = foundgrp[0];
+                    args.Player.SendMessage("Your Group Has Been Changed To " + foundgrp[0].Name, Color.Pink);
+                    return;
+                }
             }
-            if (Players[GetPlayerIndex(args.Player.Index)].rulesMode)
+            if (JPConfig.guestgroupname != "" && !foundplr[0].IsLoggedIn)
             {
-                Players[GetPlayerIndex(args.Player.Index)].rulesMode = !Players[GetPlayerIndex(args.Player.Index)].rulesMode;
-                args.Player.SendMessage("Thanks For Reading The Rules!");
+                var foundguestgrp = FindGroup(JPConfig.guestgroupname);
+                if (foundguestgrp.Count == 1)
+                {
+                    args.Player.Group = foundguestgrp[0];
+                    args.Player.SendMessage("Your Group Has Temporarily Changed To " + foundguestgrp[0].Name, Color.HotPink);
+                    args.Player.SendMessage("Use /register & /login to create a permanent account - Once Complete Type /"+ JPConfig.jailcomm +" Again.", Color.HotPink);
+                }
             }
         }
 
@@ -430,6 +441,24 @@ namespace JailPrison
             SetupConfig();
             Log.Info("Jail Reload Initiated");
             args.Player.SendMessage("Jail Reload Initiated");
+        }
+
+        public static List<Group> FindGroup(string grp)
+        {
+            var found = new List<Group>();
+            grp = grp.ToLower();
+            foreach (Group group in TShock.Groups.groups)
+            {
+                if (group == null)
+                    continue;
+
+                string name = group.Name.ToLower();
+                if (name.Equals(grp))
+                    return new List<Group> { group };
+                if (name.Contains(grp))
+                    found.Add(group);
+            }
+            return found;
         }
     }
 }
