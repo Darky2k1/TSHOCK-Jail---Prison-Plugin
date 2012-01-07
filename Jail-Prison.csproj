@@ -70,15 +70,15 @@
       <ExecutableExtension>.exe</ExecutableExtension>
       <HintPath>Service References\TerrariaServer.exe</HintPath>
     </Reference>
-    <Reference Include="TShockAPI, Version=3.3.4.1205, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="TShockAPI, Version=3.4.2.1230, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Service References\TShockAPI.dll</HintPath>
+      <HintPath>..\tshock1.15\TShockAPI\bin\Release\TShockAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JPConfig.cs" />
+    <Compile Include="Jail-Prison-afk-chests-cmd-kill-updated.cs" />
+    <Compile Include="JPConfigandmore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Jail-Prison.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

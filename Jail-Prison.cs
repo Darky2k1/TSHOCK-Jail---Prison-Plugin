@@ -136,19 +136,24 @@ namespace JailPrison
                     {
                         if (player.prisonMode && JPConfig.prisonmode)
                         {
-                            if (TShock.Regions.InAreaRegionName(player.TSPlayer.TileX, player.TSPlayer.TileY) != "jail")
+                            if (TShock.Regions.InAreaRegionName(player.TSPlayer.TileX, player.TSPlayer.TileY) != "prison")
                             {
-                                if (player.TSPlayer.Teleport(Main.spawnTileX, Main.spawnTileY))
+                                string warpName = "prison";
+                                var warp = TShock.Warps.FindWarp(warpName);
+                                if (warp.WarpPos != Vector2.Zero)
                                 {
-                                    if (player.prisonModeSpam)
+                                    if (player.TSPlayer.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
                                     {
-                                        player.TSPlayer.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
-                                        player.prisonModeSpam = false;
+                                        if (player.prisonModeSpam)
+                                        {
+                                            player.TSPlayer.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
+                                            player.prisonModeSpam = false;
+                                        }
                                     }
                                 }
                             }
                         }
-                        if (player.rulesMode && !player.TSPlayer.Group.HasPermission("jail") && JPConfig.jailmode)
+                        if (player.rulesMode && !player.TSPlayer.Group.HasPermission("jail") && JPConfig.jailmode && !player.prisonMode)
                         {
                             if (TShock.Regions.InAreaRegionName(player.TSPlayer.TileX, player.TSPlayer.TileY) != "jail")
                             {
@@ -219,7 +224,7 @@ namespace JailPrison
                         }
                         if (Players[GetPlayerIndex(ply)].prisonMode && JPConfig.prisonmode)
                         {
-                            tsplr.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
+                            tsplr.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
                             e.Handled = true;
                             return;
                         }
@@ -247,7 +252,7 @@ namespace JailPrison
                     }
                     if (Players[GetPlayerIndex(ply)].prisonMode && JPConfig.prisonmode)
                     {
-                        tsplr.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
+                        tsplr.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
                         e.Handled = true;
                         return;
                     }
@@ -270,7 +275,7 @@ namespace JailPrison
                 }
                 if (Players[GetPlayerIndex(ply)].prisonMode && JPConfig.prisonmode)
                 {
-                    tsplr.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
+                    tsplr.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
                     e.Handled = true;
                     return;
                 }
@@ -296,7 +301,7 @@ namespace JailPrison
                 }
                 if (Players[GetPlayerIndex(ply)].prisonMode && JPConfig.prisonmode)
                 {
-                    tsplr.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
+                    tsplr.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
                     e.Handled = true;
                     return;
                 }
@@ -320,7 +325,7 @@ namespace JailPrison
             }
             if (Players[GetPlayerIndex(args.Player.Index)].prisonMode)
             {
-                args.Player.SendMessage("You are stuck in jail - An Admin or Mod Will Need To Let You Out...");
+                args.Player.SendMessage("You are stuck in prison - An Admin or Mod Will Need To Let You Out...");
                 return;
             }
             if (TShock.Regions.InAreaRegionName(args.Player.TileX, args.Player.TileY) == "jail")
@@ -379,14 +384,23 @@ namespace JailPrison
             var plr = foundplr[0];
             if (Players[GetPlayerIndex(plr.Index)].prisonMode)
             {
-                args.Player.SendMessage("Player Is Already In Jail");
+                args.Player.SendMessage("Player Is Already In Prison");
                 return;
             }
-            if (plr.Teleport(Main.spawnTileX, Main.spawnTileY))
+            string warpName = "prison";
+            var warp = TShock.Warps.FindWarp(warpName);
+            if (warp.WarpPos != Vector2.Zero)
             {
-                plr.SendMessage(string.Format("{0} Warped you to the Prison!", args.Player.Name), Color.Yellow);
-                args.Player.SendMessage(string.Format("You warped {0} to Prison!", plr.Name), Color.Yellow);
-                Players[GetPlayerIndex(plr.Index)].prisonMode = !Players[GetPlayerIndex(plr.Index)].prisonMode;
+                if (plr.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
+                {
+                    plr.SendMessage(string.Format("{0} Warped you to the Prison! You Cannot Get Out Until An Admin Releases You", args.Player.Name), Color.Yellow);
+                    args.Player.SendMessage(string.Format("You warped {0} to Prison!", plr.Name), Color.Yellow);
+                    Players[GetPlayerIndex(plr.Index)].prisonMode = !Players[GetPlayerIndex(plr.Index)].prisonMode;
+                }
+            }
+            else
+            {
+                args.Player.SendMessage("Prison Warp Was Not Made! Make One!", Color.Red);
             }
         }
         private static void setfree(CommandArgs args)
@@ -425,8 +439,8 @@ namespace JailPrison
             {
                 if (plr.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
                 {
-                    plr.SendMessage(string.Format("{0} Warped you out of Jail and to Spawn!", args.Player.Name, warpName), Color.Green);
-                    args.Player.SendMessage(string.Format("You warped {0} to Spawn from Jail!", plr.Name, warpName), Color.Yellow);
+                    plr.SendMessage(string.Format("{0} Warped You To Spawn From Prison! Now Behave!!!!!", args.Player.Name, warpName), Color.Green);
+                    args.Player.SendMessage(string.Format("You warped {0} to Spawn from Prison!", plr.Name, warpName), Color.Yellow);
                     Players[GetPlayerIndex(plr.Index)].prisonMode = !Players[GetPlayerIndex(plr.Index)].prisonMode;
                     Players[GetPlayerIndex(plr.Index)].prisonModeSpam = true;
                 }
