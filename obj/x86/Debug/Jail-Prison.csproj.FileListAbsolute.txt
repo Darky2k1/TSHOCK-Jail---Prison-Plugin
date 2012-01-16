@@ -11,3 +11,4 @@ C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\TShoc
 C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\TShockAPI.xml
 C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\HttpServer.pdb
 C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\HttpServer.xml
+C:\Users\DarkunderdoG\Desktop\tshock\TSHOCK-Jail---Prison-Plugin\bin\Debug\LuaInterface.dll

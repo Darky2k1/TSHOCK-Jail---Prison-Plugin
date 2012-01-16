@@ -244,8 +244,7 @@ namespace JailPrison
                                 {
                                     if (!region.Contains(player.TSPlayer.Name.ToLower()) && !region.Contains(player.TSPlayer.Group.Name.ToLower()) && !region.Contains(prefix.ToLower()))
                                     {
-                                        var warp = TShock.Warps.FindWarp("spawn");
-                                        if (player.TSPlayer.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
+                                        if (player.TSPlayer.Teleport(Main.spawnTileX, Main.spawnTileY))
                                         {
                                             if (player.chestModeSpam)
                                             {
@@ -307,7 +306,7 @@ namespace JailPrison
                                 }
                             }
                         }
-                        if (JPConfig.afkmode)
+                        if (JPConfig.diemobmode)
                         {
                             for (int i = 0; i < Main.maxNPCs; i++)
                             {
@@ -315,8 +314,11 @@ namespace JailPrison
                                 string npcregionlist = string.Join(",", npcregion.ToArray());
                                 if (Main.npc[i].active && !Main.npc[i].friendly && npcregion.Count > 0)
                                 {
-                                    if (npcregionlist.Contains("afk"))
+                                    if (npcregionlist.Contains("diemob"))
+                                    {
+                                        Main.npc[i].netDefaults(0);
                                         TSPlayer.Server.StrikeNPC(i, 99999, 90f, 1);
+                                    }
                                 }
                             }
                         }
@@ -464,8 +466,7 @@ namespace JailPrison
                 }
                 else
                 {
-                    var warp = TShock.Warps.FindWarp("spawn");
-                    if (tsplr.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
+                    if (tsplr.Teleport(Main.spawnTileX, Main.spawnTileY))
                         tsplr.SendMessage("Teleported to the map's spawnpoint.");
                     e.Handled = true;
                     return;
@@ -624,27 +625,18 @@ namespace JailPrison
                 args.Player.SendMessage(string.Format("You Cannot Use This Command On This Player!", args.Parameters.Count), Color.Red);
                 return;
             }
-            string warpName = "spawn";
-            var warp = TShock.Warps.FindWarp(warpName);
             var plr = foundplr[0];
             if (!Players[GetPlayerIndex(plr.Index)].prisonMode)
             {
                 args.Player.SendMessage("Player Is Already Free");
                 return;
             }
-            if (warp.WarpPos != Vector2.Zero)
+            if (plr.Teleport(Main.spawnTileX, Main.spawnTileY))
             {
-                if (plr.Teleport((int)warp.WarpPos.X, (int)warp.WarpPos.Y + 3))
-                {
-                    plr.SendMessage(string.Format("{0} Warped You To Spawn From Prison! Now Behave!!!!!", args.Player.Name, warpName), Color.Green);
-                    args.Player.SendMessage(string.Format("You warped {0} to Spawn from Prison!", plr.Name, warpName), Color.Yellow);
-                    Players[GetPlayerIndex(plr.Index)].prisonMode = !Players[GetPlayerIndex(plr.Index)].prisonMode;
-                    Players[GetPlayerIndex(plr.Index)].prisonModeSpam = true;
-                }
-            }
-            else
-            {
-                args.Player.SendMessage("Spawn Warp Was Not Made! Make One!", Color.Red);
+                plr.SendMessage(string.Format("{0} Warped You To Spawn From Prison! Now Behave!!!!!", args.Player.Name), Color.Green);
+                args.Player.SendMessage(string.Format("You warped {0} to Spawn from Prison!", plr.Name), Color.Yellow);
+                Players[GetPlayerIndex(plr.Index)].prisonMode = !Players[GetPlayerIndex(plr.Index)].prisonMode;
+                Players[GetPlayerIndex(plr.Index)].prisonModeSpam = true;
             }
         }
         private static void jailreload(CommandArgs args)

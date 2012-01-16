@@ -15,6 +15,7 @@ namespace JailPrison
         public bool killzones = false;
         public bool afkmode = false;
         public int afktime = 300;
+        public bool diemobmode = true;
         public bool cmdlimit = false;
         public int cmdtime = 120;
 
